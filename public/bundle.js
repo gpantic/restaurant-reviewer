@@ -23117,9 +23117,6 @@
 	var SET_SELECTED_RESTAURANT = exports.SET_SELECTED_RESTAURANT = 'SET_SELECTED_RESTAURANT';
 	
 	// Reviews
-	var GET_REVIEWS_SUCCESS = exports.GET_REVIEWS_SUCCESS = 'GET_REVIEWS_SUCCESS';
-	var PUT_REVIEW_SUCCESS = exports.PUT_REVIEW_SUCCESS = 'PUT_REVIEW_SUCCESS';
-	var ADD_REVIEW_SUCCESS = exports.ADD_REVIEW_SUCCESS = 'ADD_REVIEW_SUCCESS';
 	var DELETE_REVIEW_SUCCESS = exports.DELETE_REVIEW_SUCCESS = 'DELETE_REVIEW_SUCCESS';
 
 /***/ },
@@ -28267,6 +28264,7 @@
 	    });
 	}
 	
+	/* Review actions */
 	function updateReview(dispatch, review, id) {
 	    if (id) {
 	        _ReviewService2.default.put(review, id).then(function () {
@@ -28289,6 +28287,7 @@
 	    });
 	}
 	
+	/* User actions */
 	function getActiveUser(dispatch) {
 	    _UserService2.default.get().then(function (users) {
 	        var activeUser = users[0];
@@ -28298,44 +28297,6 @@
 	        });
 	    });
 	}
-	
-	/* Review actions */
-	// export function updateReview(review, id) {
-	//     ReviewService.put(review, id).then(() => {
-	//         dispatch({
-	//             type: types.PUT_REVIEW_SUCCESS,
-	//             review,
-	//             id
-	//         });
-	//         return {
-	//             type: types.PUT_REVIEW_SUCCESS,
-	//             review,
-	//             id
-	//         };
-	//     });
-	// }
-	//
-	// export function addReview(review) {
-	//     ReviewService.put(review).then(() => {
-	//         return {
-	//             type: types.PUT_REVIEW_SUCCESS,
-	//             review,
-	//             id
-	//         };
-	//     });
-	//
-	//     return {
-	//         type: types.PUT_REVIEW_SUCCESS,
-	//         review
-	//     };
-	// }
-	//
-	// export function deleteReview(id) {
-	//     return {
-	//         type: types.DELETE_REVIEW_SUCCESS,
-	//         id
-	//     };
-	// }
 
 /***/ },
 /* 257 */
@@ -30057,7 +30018,7 @@
 	                    _react2.default.createElement(
 	                        'div',
 	                        { className: 'panel-body' },
-	                        _react2.default.createElement(
+	                        this.props.restaurant.description && _react2.default.createElement(
 	                            'p',
 	                            null,
 	                            this.props.restaurant.description

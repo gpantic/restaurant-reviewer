@@ -22,7 +22,9 @@ class RestaurantInfo extends React.Component {
                 <div className="panel panel-default">
                     <div className="panel-heading">{this.props.restaurant.name}</div>
                     <div className="panel-body">
-                        <p>{this.props.restaurant.description}</p>
+                        {this.props.restaurant.description &&
+                            <p>{this.props.restaurant.description}</p>
+                        }
                         <RestaurantInfoReviews
                             reviews={this.props.restaurant.reviews}
                             restaurantId={this.props.restaurant._id}

@@ -40,6 +40,7 @@ export function getRestaurantById(dispatch, id) {
     });
 }
 
+/* Review actions */
 export function updateReview(dispatch, review, id) {
     if (id) {
         ReviewService.put(review, id).then(() => {
@@ -62,6 +63,7 @@ export function deleteReviewById(dispatch, id) {
     });
 }
 
+/* User actions */
 export function getActiveUser(dispatch) {
     UserService.get().then(users => {
         let activeUser = users[0];
@@ -71,41 +73,3 @@ export function getActiveUser(dispatch) {
         });
     });
 }
-
-/* Review actions */
-// export function updateReview(review, id) {
-//     ReviewService.put(review, id).then(() => {
-//         dispatch({
-//             type: types.PUT_REVIEW_SUCCESS,
-//             review,
-//             id
-//         });
-//         return {
-//             type: types.PUT_REVIEW_SUCCESS,
-//             review,
-//             id
-//         };
-//     });
-// }
-//
-// export function addReview(review) {
-//     ReviewService.put(review).then(() => {
-//         return {
-//             type: types.PUT_REVIEW_SUCCESS,
-//             review,
-//             id
-//         };
-//     });
-//
-//     return {
-//         type: types.PUT_REVIEW_SUCCESS,
-//         review
-//     };
-// }
-//
-// export function deleteReview(id) {
-//     return {
-//         type: types.DELETE_REVIEW_SUCCESS,
-//         id
-//     };
-// }
