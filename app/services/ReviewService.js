@@ -13,7 +13,7 @@ class ReviewService {
             return res.data;
         });
     }
-    put(id, data) {
+    put(data, id) {
         return axios.put(config.url + 'review/' + id, data);
     }
     delete(id) {

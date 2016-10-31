@@ -1,7 +1,6 @@
 import axios from 'axios';
 import config from '../config/config';
 
-
 class RestaurantService {
     get() {
         return axios.get(config.url + 'restaurant').then(res => {
@@ -10,4 +9,4 @@ class RestaurantService {
     }
 }
 
-export default new RestaurantService;
+export default new RestaurantService();
