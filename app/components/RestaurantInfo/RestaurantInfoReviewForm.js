@@ -7,7 +7,7 @@ class RestaurantInfoReviewForm extends React.Component {
         super(props);
         this.state = {
             review: {
-                date: props.review && props.review.date ? props.review.date : new Date(),
+                date: new Date(),
                 stars: props.review && props.review.stars || 5,
                 text: props.review && props.review.text || '',
                 restaurant: props.restaurant || null,
@@ -51,8 +51,8 @@ class RestaurantInfoReviewForm extends React.Component {
                     </div>
                 </div>
                 <div className="clearfix">
-                    <button className="btn btn-success btn-xs col-xs-2" onClick={this.save.bind(this, this.state.review)}>Save</button>
-                    <button className="btn btn-warning btn-xs col-xs-2 pull-right" onClick={this.props.cancel}>Cancel</button>
+                    <button type="button" className="btn btn-success btn-xs col-xs-2" onClick={this.save.bind(this, this.state.review)}>Save</button>
+                    <button type="button" className="btn btn-warning btn-xs col-xs-2 pull-right" onClick={this.props.cancel}>Cancel</button>
                 </div>
             </form>
         )

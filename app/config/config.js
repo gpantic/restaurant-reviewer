@@ -1,5 +1,5 @@
 let config = {
-    url: 'https://restrest.herokuapp.com/panta/'
+    url: 'https://restrest.herokuapp.com/gpantic/'
 };
 
 export default config;

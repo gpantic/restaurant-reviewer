@@ -14,7 +14,7 @@ class Restaurant extends React.Component {
     }
     render() {
         return (
-            <Link to={'/' + this.props.restaurant._id} className={this.classNames()}>
+            <Link to={this.props.restaurant._id} activeClassName="active" className="list-group-item">
                 <span className="badge">{this.averageRating(this.props.restaurant.reviews)}</span>
                 {this.props.restaurant.name}
             </Link>
